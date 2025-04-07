@@ -5,7 +5,7 @@ function App() {
   const [recommendations, setRecommendations] = useState([]);
 
   const fetchRecommendations = async () => {
-    const response = await fetch('${process.env.REACT_APP_API_URL}/recommend/?job_query=${jobQuery}&top_k=3');
+    const response = await fetch('https://shl-assessment-recommendation-backend.onrender.com/recommend/?job_query=${jobQuery}&top_k=3');
     const data = await response.json();
     setRecommendations(data.recommendations);
   };
