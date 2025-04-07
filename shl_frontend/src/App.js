@@ -5,7 +5,7 @@ function App() {
   const [recommendations, setRecommendations] = useState([]);
 
   const fetchRecommendations = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/recommend/?job_query=${jobQuery}&top_k=3`);
+    const response = await fetch(`https://shl-assessment-recommendation-backend.onrender.com/recommend/?job_query=${jobQuery}&top_k=3`);
     const data = await response.json();
     setRecommendations(data.recommendations);
   };
